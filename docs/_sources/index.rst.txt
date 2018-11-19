@@ -1,5 +1,10 @@
+.. warning::
+    Site is under-construction!
+
+Home
+====
+
 .. toctree::
-    :hidden:
     :titlesonly:
     :maxdepth: 0
 
