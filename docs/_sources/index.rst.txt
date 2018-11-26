@@ -1,8 +1,18 @@
-Welcome !
-=========
+.. warning::
+    Site is under-construction!
+
+Home
+====
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :titlesonly:
+    :maxdepth: 0
 
-This site is under-construction.
+    about
+
+.. toctree::
+    :maxdepth: 3
+    :caption: Blogs
+    :glob:
+    
+    blogs/*
