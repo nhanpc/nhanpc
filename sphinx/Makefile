@@ -19,5 +19,12 @@ help:
 %: Makefile
 	rm -Rf $(BUILDDIR)/html/* 
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+	# clearn root githubpage document
 	rm -Rf $(BUILDDIR)/../../docs/*
+
+	# cp nesscacery files
+	cp -rf $(BUILDDIR)/../docs_template/* $(BUILDDIR)/../../docs/
+
+	# cp html files
 	cp -rf $(BUILDDIR)/html/* $(BUILDDIR)/../../docs/
