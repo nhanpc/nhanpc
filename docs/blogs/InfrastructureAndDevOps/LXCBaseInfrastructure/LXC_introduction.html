@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LXC Introduction &mdash; nhan&#39;s site 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Managements" href="../../management.html" />
+    <link rel="prev" title="LXC Base Infrastructure" href="../lxc_base_infrastructure.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> nhan's site
+          
+
+          
+            
+            <img src="../../../_static/nhan_profile_pic.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About me !</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Blogs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../infrastructure_and_DevOps.html">Infrastructure And DevOps</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../lxc_base_infrastructure.html">LXC Base Infrastructure</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LXC Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defines">Defines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management.html">Managements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../orthers.html">Orthers topics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nhan's site</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../infrastructure_and_DevOps.html">Infrastructure And DevOps</a> &raquo;</li>
+        
+          <li><a href="../lxc_base_infrastructure.html">LXC Base Infrastructure</a> &raquo;</li>
+        
+      <li>LXC Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/blogs/InfrastructureAndDevOps/LXCBaseInfrastructure/LXC_introduction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lxc-introduction">
+<h1>LXC Introduction<a class="headerlink" href="#lxc-introduction" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/LXC">LXC</a> (LinuX Container), widely knew by <a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)">Docker</a> (a high level API for LXC), are common those days in many applications
+like CIs, test, developments and event on Production. GCP, AWS and many cloud provider are support their container flatform due to its securities and isolated properties.</p>
+<p>This article will arm to give a basic view of LXC, docker compare to traditional VMs.</p>
+<div class="section" id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>LXC<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>LXC</strong> (LinuX Container) is an operating system-level virtualization through a virtual environment that has its own process and network space
+, LXC relies on the Linux kernel <a class="reference external" href="https://en.wikipedia.org/wiki/Cgroups">cgroups</a> functionality.</p>
+<p>LXC inherit Cgroups powers so LXC can have:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Resource limiting</strong>: <em>Groups can be set to not exceed a configured memory limit</em></li>
+<li><strong>Prioritization</strong>: <em>Some groups may get a larger share of CPU utilization or disk I/O throughput</em></li>
+<li><strong>Accounting</strong>: <em>Measures a group’s resource usage</em></li>
+<li><strong>Control</strong>: <em>Freezing groups of processes, their checkpointing and restarting</em></li>
+</ul>
+</div></blockquote>
+<p>LXC is light, it’s request a minim resources (memory, CPUs) to run and blast speed. It can boot up in seconds compare to minutes of traditional VMs.
+But LXC can only host Linux guest</p>
+<p>LXC’s securities compare to VMs are cons, because it isn’t a real VMs, all processes are run directly on same Linux kernel.</p>
+</div>
+<div class="section" id="id2">
+<h3>Docker<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="vms">
+<h3>VMs<a class="headerlink" href="#vms" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="compares">
+<h3>Compares<a class="headerlink" href="#compares" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="22%" />
+<col width="22%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">LXC</th>
+<th class="head">Docker</th>
+<th class="head">VMs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Weigh</td>
+<td>Light</td>
+<td>Light</td>
+<td>Heavy</td>
+</tr>
+<tr class="row-odd"><td>Snapshot</td>
+<td>FileOnly</td>
+<td>FileOnly</td>
+<td>Yes(full)</td>
+</tr>
+<tr class="row-even"><td>Securities</td>
+<td>High</td>
+<td>High</td>
+<td>VeryHigh</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/LXC">https://en.wikipedia.org/wiki/LXC</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Cgroups">https://en.wikipedia.org/wiki/Cgroups</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software">https://en.wikipedia.org/wiki/Docker_(software</a>)</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../management.html" class="btn btn-neutral float-right" title="Managements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../lxc_base_infrastructure.html" class="btn btn-neutral" title="LXC Base Infrastructure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Nhan Pham Chan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
