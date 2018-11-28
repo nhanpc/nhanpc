@@ -24,7 +24,7 @@ help:
 	rm -Rf $(BUILDDIR)/../../docs/*
 
 	# cp nesscacery files
-	cp -rf $(BUILDDIR)/../docs_template/* $(BUILDDIR)/../../docs/
+	cp -rf $(BUILDDIR)/../docs_template/. $(BUILDDIR)/../../docs/
 
 	# cp html files
-	cp -rf $(BUILDDIR)/html/* $(BUILDDIR)/../../docs/
+	cp -rf $(BUILDDIR)/html/. $(BUILDDIR)/../../docs/
