@@ -94,7 +94,11 @@ html_theme = 'sphinx_rtd_theme'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'navigation_depth': 6
+}
+    # 'collapse_navigation': true,
+    # 'display_version': false
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -171,3 +175,6 @@ texinfo_documents = [
 ]
 
 html_logo = '_static/images/nhan_profile_pic.jpg'
+
+def setup(app):
+    app.add_stylesheet('css/custom.css')
