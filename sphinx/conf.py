@@ -52,8 +52,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'nhan\'s site'
-copyright = '2018, Nhan Pham Chan'
-author = 'Nhan Pham Chan'
+copyright = 'Pham Chan Nhan'
+author = 'Pham Chan Nhan'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -149,7 +149,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'nhanssite.tex', 'nhan\'s site Documentation',
-     'Nhan Pham Chan', 'manual'),
+     'Pham Chan Nhan', 'manual'),
 ]
 
 
