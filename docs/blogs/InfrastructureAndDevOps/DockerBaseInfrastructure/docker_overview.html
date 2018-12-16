@@ -98,11 +98,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#run-first-docker-s-container-instance">Run first Docker’s container instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#monitor-your-containers-resources">Monitor your containers resources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hundred-to-thousands-replica-on-single-machine">Hundred to Thousands replica on single machine</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Docker’s architecture</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#docker-s-containers-are-common">Docker’s containers are common</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#compares">Compares</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Docker container’s architecture</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#references">References:</a></li>
 </ul>
 </li>
@@ -233,12 +229,12 @@ exec_time=$((end-start))
 echo $exec_time
 </pre></div>
 </div>
-<p>It just take ~20 seconds as you ran.</p>
+<p>It just take ~100 seconds to script executed.</p>
 <p>Now run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stats</span></code> and see the resources taken by them, it’s a very very small resource they taken, just like a process.
-That’s because <a class="reference external" href="#id1">Docker’s architecture</a>.</p>
+That’s because <a class="reference external" href="#id1">Docker container’s architecture</a>.</p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p>To remove last containers</p>
+<p>To remove containers created by last script:</p>
 <div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>number_of_instance=100
 
 for i in `seq 1 $number_of_instance`
@@ -251,42 +247,10 @@ done
 </div>
 </div>
 <div class="section" id="id1">
-<h2>Docker’s architecture<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><div class="figure">
-<img alt="../../../_images/docker_architecture.svg" src="../../../_images/docker_architecture.svg" /></div>
-<ul class="simple">
-<li><strong>Docker daemon</strong>: runs on a host, receive commands from client, execute command and management container life cycle, images etc…</li>
-<li><strong>Client</strong>: Docker’s user interface, use REST API to control or interact with Docker daemon.</li>
-<li><strong>Images</strong>: template used to create containers, can build by <cite>Dockerfile</cite> file and <cite>docker build</cite> command.</li>
-<li><strong>Containers</strong>: instance of a Docker image.</li>
-<li><strong>Registry</strong>: private or public registry of Docker images.</li>
-<li><strong>Services</strong> (Swarm): allowed to use docker on multi-host.</li>
-</ul>
-</div></blockquote>
-<div class="section" id="docker-s-containers-are-common">
-<h3>Docker’s containers are common<a class="headerlink" href="#docker-s-containers-are-common" title="Permalink to this headline">¶</a></h3>
-<p>Docker those days are common in many areas, include <em>CI, Testing, Development</em> and, <em>MicroServices</em> trend are also make it grow very fast.
-Cloud providers also have their own container cloud service (GCP, AWS, DigitalOcean…) and they have APIs for <em>scale and up in seconds</em> instead of minutes or hours in traditional ways.
-Want</p>
-<p><strong>LXC</strong> is an operating system-level virtualization through a virtual environment that has its own process and network space
-, LXC relies on the Linux kernel <a class="reference external" href="https://en.wikipedia.org/wiki/Cgroups">cgroups</a> functionality.</p>
-<p>LXC inherit Cgroups powers so LXC can have:</p>
-<blockquote>
-<div><ul class="simple">
-<li><strong>Resource limiting</strong>: <em>Groups can be set to not exceed a configured memory limit</em></li>
-<li><strong>Prioritization</strong>: <em>Some groups may get a larger share of CPU utilization or disk I/O throughput</em></li>
-<li><strong>Accounting</strong>: <em>Measures a group’s resource usage</em></li>
-<li><strong>Control</strong>: <em>Freezing groups of processes, their check pointing and restarting</em></li>
-</ul>
-</div></blockquote>
-<p>LXC is light, it’s request a minim resources (memory, CPUs) to run and blast speed. It can boot up in seconds compare to minutes of traditional VMs.
-But LXC can only host Linux guest</p>
-<p>LXC’s securities compare to VMs are disadvantaged, because it isn’t a real VMs, all processes are run directly on same Linux kernel.</p>
+<h2>Docker container’s architecture<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="../../../_images/Blog.-Are-containers-..VM-Image-1.png" src="../../../_images/Blog.-Are-containers-..VM-Image-1.png" />
 </div>
-</div>
-<div class="section" id="compares">
-<h2>Compares<a class="headerlink" href="#compares" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="32%" />

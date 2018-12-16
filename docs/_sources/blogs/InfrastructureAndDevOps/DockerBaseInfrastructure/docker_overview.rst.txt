@@ -60,15 +60,15 @@ We are going to create 100 (one hundred) instance of Wordpress on different port
     exec_time=$((end-start))
     echo $exec_time 
 
-It just take ~20 seconds as you ran.
+It just take ~100 seconds to script executed.
 
 Now run ``docker stats`` and see the resources taken by them, it's a very very small resource they taken, just like a process. 
-That's because `Docker's architecture <#id1>`_.
+That's because `Docker container's architecture <#id1>`_.
 
-.. hint:: To remove last containers
+.. hint:: To remove containers created by last script:
 
     ::
-    
+
         number_of_instance=100
         
         for i in `seq 1 $number_of_instance`
@@ -77,44 +77,10 @@ That's because `Docker's architecture <#id1>`_.
             sudo docker stop wordpress_$i && docker rm wordpress_$i
         done
 
-Docker's architecture
-=====================
+Docker container's architecture
+===============================
 
-    .. figure:: /_static/images/blogs/InfrastructureAndDevOps/DockerBaseInfrastructure/docker_architecture.svg
-
-    * **Docker daemon**: runs on a host, receive commands from client, execute command and management container life cycle, images etc...
-    * **Client**: Docker's user interface, use REST API to control or interact with Docker daemon.
-    * **Images**: template used to create containers, can build by `Dockerfile` file and `docker build` command.
-    * **Containers**: instance of a Docker image.
-    * **Registry**: private or public registry of Docker images.
-    * **Services** (Swarm): allowed to use docker on multi-host.
-
-
-Docker's containers are common
-------------------------------
-Docker those days are common in many areas, include *CI, Testing, Development* and, *MicroServices* trend are also make it grow very fast.
-Cloud providers also have their own container cloud service (GCP, AWS, DigitalOcean...) and they have APIs for *scale and up in seconds* instead of minutes or hours in traditional ways.
-Want
-
-
-**LXC** is an operating system-level virtualization through a virtual environment that has its own process and network space
-, LXC relies on the Linux kernel `cgroups <https://en.wikipedia.org/wiki/Cgroups>`_ functionality.
-
-LXC inherit Cgroups powers so LXC can have:
-
-    * **Resource limiting**: *Groups can be set to not exceed a configured memory limit*
-    * **Prioritization**: *Some groups may get a larger share of CPU utilization or disk I/O throughput*
-    * **Accounting**: *Measures a group's resource usage*
-    * **Control**: *Freezing groups of processes, their check pointing and restarting*
-
-LXC is light, it's request a minim resources (memory, CPUs) to run and blast speed. It can boot up in seconds compare to minutes of traditional VMs.
-But LXC can only host Linux guest
-
-LXC's securities compare to VMs are disadvantaged, because it isn't a real VMs, all processes are run directly on same Linux kernel.
-
-
-Compares
-========
+.. figure:: /_static/images/blogs/InfrastructureAndDevOps/DockerBaseInfrastructure/Blog.-Are-containers-..VM-Image-1.png
 
 +---------------------+----------------------+----------------------+
 |                     | Docker               | VMs                  |
