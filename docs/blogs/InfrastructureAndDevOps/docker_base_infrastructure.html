@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>LXC Base Infrastructure &mdash; nhan&#39;s site 1 documentation</title>
+  <title>Docker Base Infrastructure &mdash; nhan&#39;s site 1 documentation</title>
   
 
   
@@ -26,10 +26,11 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Managements" href="../management.html" />
+    <link rel="next" title="Docker Overview" href="DockerBaseInfrastructure/docker_overview.html" />
     <link rel="prev" title="Infrastructure And DevOps" href="../infrastructure_and_DevOps.html" /> 
 
   
@@ -92,7 +93,8 @@
 <p class="caption"><span class="caption-text">Blogs</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../infrastructure_and_DevOps.html">Infrastructure And DevOps</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">LXC Base Infrastructure</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docker Base Infrastructure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DockerBaseInfrastructure/docker_overview.html">Docker Overview</a></li>
 </ul>
 </li>
 </ul>
@@ -146,13 +148,13 @@
         
           <li><a href="../infrastructure_and_DevOps.html">Infrastructure And DevOps</a> &raquo;</li>
         
-      <li>LXC Base Infrastructure</li>
+      <li>Docker Base Infrastructure</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/blogs/InfrastructureAndDevOps/lxc_base_infrastructure.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/blogs/InfrastructureAndDevOps/docker_base_infrastructure.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -165,9 +167,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="lxc-base-infrastructure">
-<h1>LXC Base Infrastructure<a class="headerlink" href="#lxc-base-infrastructure" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="docker-base-infrastructure">
+<h1>Docker Base Infrastructure<a class="headerlink" href="#docker-base-infrastructure" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DockerBaseInfrastructure/docker_overview.html">Docker Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DockerBaseInfrastructure/docker_overview.html#run-first-docker-s-container-instance">Run first Docker’s container instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DockerBaseInfrastructure/docker_overview.html#monitor-your-containers-resources">Monitor your containers resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DockerBaseInfrastructure/docker_overview.html#hundred-to-thousands-replica-on-single-machine">Hundred to Thousands replica on single machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DockerBaseInfrastructure/docker_overview.html#id1">Docker container’s architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DockerBaseInfrastructure/docker_overview.html#references">References:</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
@@ -179,7 +191,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../management.html" class="btn btn-neutral float-right" title="Managements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DockerBaseInfrastructure/docker_overview.html" class="btn btn-neutral float-right" title="Docker Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../infrastructure_and_DevOps.html" class="btn btn-neutral" title="Infrastructure And DevOps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -191,7 +203,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Nhan Pham Chan
+        &copy; Copyright Pham Chan Nhan
 
     </p>
   </div>
@@ -216,7 +228,6 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

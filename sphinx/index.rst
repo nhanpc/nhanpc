@@ -11,7 +11,7 @@ Home
     about
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 5
     :caption: Blogs
     :glob:
     

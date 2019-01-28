@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docker Overview &mdash; nhan&#39;s site 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Managements" href="../../management.html" />
+    <link rel="prev" title="Docker Base Infrastructure" href="../docker_base_infrastructure.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> nhan's site
+          
+
+          
+            
+            <img src="../../../_static/nhan_profile_pic.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About me !</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Blogs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../infrastructure_and_DevOps.html">Infrastructure And DevOps</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../docker_base_infrastructure.html">Docker Base Infrastructure</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Docker Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run-first-docker-s-container-instance">Run first Docker’s container instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitor-your-containers-resources">Monitor your containers resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hundred-to-thousands-replica-on-single-machine">Hundred to Thousands replica on single machine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Docker container’s architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management.html">Managements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../orthers.html">Orthers topics</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nhan's site</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../infrastructure_and_DevOps.html">Infrastructure And DevOps</a> &raquo;</li>
+        
+          <li><a href="../docker_base_infrastructure.html">Docker Base Infrastructure</a> &raquo;</li>
+        
+      <li>Docker Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/blogs/InfrastructureAndDevOps/DockerBaseInfrastructure/docker_overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker-overview">
+<h1>Docker Overview<a class="headerlink" href="#docker-overview" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)">Docker</a> is a “containerization” program,
+which is provide <a class="reference external" href="https://en.wikipedia.org/wiki/Operating-system-level_virtualization">operating-system-level virtualization</a>.</p>
+<p>Those days , Docker are widely used in many applications, include <strong>serverless application</strong> and <strong>Continuous integration</strong> (CI) due to
+the ability of create <strong>isolated</strong>, <strong>securities</strong> and <strong>lightweight</strong> environments for each container.</p>
+<div class="section" id="run-first-docker-s-container-instance">
+<h2>Run first Docker’s container instance<a class="headerlink" href="#run-first-docker-s-container-instance" title="Permalink to this headline">¶</a></h2>
+<p>Docker is easy to run everywhere with simple command <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">up</span> <span class="pre">[option]</span> <span class="pre">[dockerimage]</span></code> then your instance is ready.</p>
+<p>Eg : Run an instance of Wordpress:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker run -d --name wordpress -p8080:80 wordpress
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Explain docker’s options: name, port …</p>
+</div>
+<p>Now point your web-browser to <code class="code docutils literal notranslate"><span class="pre">http://localhost:8080/</span></code> and enjoy your Wordpress instance without Apache, PHP and MySQL install.</p>
+</div>
+<div class="section" id="monitor-your-containers-resources">
+<h2>Monitor your containers resources<a class="headerlink" href="#monitor-your-containers-resources" title="Permalink to this headline">¶</a></h2>
+<p>To use docker building-in resources monitor command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker stats
+</pre></div>
+</div>
+<p>Result sill be some things like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONTAINER</span> <span class="n">ID</span>        <span class="n">NAME</span>                <span class="n">CPU</span> <span class="o">%</span>               <span class="n">MEM</span> <span class="n">USAGE</span> <span class="o">/</span> <span class="n">LIMIT</span>     <span class="n">MEM</span> <span class="o">%</span>               <span class="n">NET</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span>             <span class="n">BLOCK</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span>           <span class="n">PIDS</span>
+<span class="mi">7</span><span class="n">d78cb0276ff</span>        <span class="n">wordpress</span>           <span class="mf">0.00</span><span class="o">%</span>               <span class="mf">25.62</span><span class="n">MiB</span> <span class="o">/</span> <span class="mf">6.813</span><span class="n">GiB</span>   <span class="mf">0.37</span><span class="o">%</span>               <span class="mf">60.8</span><span class="n">kB</span> <span class="o">/</span> <span class="mf">70.8</span><span class="n">kB</span>     <span class="mf">14.4</span><span class="n">MB</span> <span class="o">/</span> <span class="mi">0</span><span class="n">B</span>         <span class="mi">9</span>
+</pre></div>
+</div>
+<p>Now you see the magic here, Wordpress’s container just take ~25.6MiB of RAM, compare to a mini VM to run a LAMP stash must take ~400MiB of RAM…</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Explain <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stats</span></code> command output</p>
+</div>
+</div>
+<div class="section" id="hundred-to-thousands-replica-on-single-machine">
+<h2>Hundred to Thousands replica on single machine<a class="headerlink" href="#hundred-to-thousands-replica-on-single-machine" title="Permalink to this headline">¶</a></h2>
+<p>We are going to create 100 (one hundred) instance of Wordpress on different ports:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start=`date +%s`
+number_of_instance=100
+
+for i in `seq 1 $number_of_instance`
+do
+    port=$(( 7000 + $i ))
+    sudo docker run -d --name wordpress_$i -p$port:80 wordpress
+done
+
+end=`date +%s`
+exec_time=$((end-start))
+echo $exec_time
+</pre></div>
+</div>
+<p>It just take ~100 seconds to script executed.</p>
+<p>Now run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stats</span></code> and see the resources taken by them, it’s a very very small resource they taken, just like a process.
+That’s because <a class="reference external" href="#id1">Docker container’s architecture</a>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>To remove containers created by last script:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>number_of_instance=100
+
+for i in `seq 1 $number_of_instance`
+do
+    port=$(( 7000 + $i ))
+    sudo docker stop wordpress_$i &amp;&amp; docker rm wordpress_$i
+done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Docker container’s architecture<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="../../../_images/Blog.-Are-containers-..VM-Image-1.png" src="../../../_images/Blog.-Are-containers-..VM-Image-1.png" />
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="34%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Docker</th>
+<th class="head">VMs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Weigh</td>
+<td>Light</td>
+<td>Heavy</td>
+</tr>
+<tr class="row-odd"><td>Snapshot</td>
+<td>FileOnly</td>
+<td>Yes(full)</td>
+</tr>
+<tr class="row-even"><td>Securities</td>
+<td>High</td>
+<td>VeryHigh</td>
+</tr>
+<tr class="row-odd"><td>Different OS (1)</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="references">
+<h2>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/LXC">https://en.wikipedia.org/wiki/LXC</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Cgroups">https://en.wikipedia.org/wiki/Cgroups</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software">https://en.wikipedia.org/wiki/Docker_(software</a>)</li>
+<li><a class="reference external" href="https://robin.io/blog/containers-deep-dive-lxc-vs-docker-comparison/">https://robin.io/blog/containers-deep-dive-lxc-vs-docker-comparison/</a></li>
+<li><a class="reference external" href="https://docs.docker.com/engine/docker-overview/">https://docs.docker.com/engine/docker-overview/</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../management.html" class="btn btn-neutral float-right" title="Managements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../docker_base_infrastructure.html" class="btn btn-neutral" title="Docker Base Infrastructure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Pham Chan Nhan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
